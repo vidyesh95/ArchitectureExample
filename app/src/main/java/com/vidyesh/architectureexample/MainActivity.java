@@ -21,7 +21,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     public static final int ADD_NOTE_REQUEST = 1;
     public static final int  EDIT_NOTE_REQUEST = 2;
     private NoteViewModel noteViewModel;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Floating action button for adding note
         FloatingActionButton buttonAddNote = findViewById(R.id.button_add_note);
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, ADD_NOTE_REQUEST);
             }
         });
-
+        // Recycler view
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
